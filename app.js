@@ -26,7 +26,8 @@ var LocalStrategy=require("passport-local");
 
 //add mongoose
 var mongoose=require("mongoose");
-mongoose.connect("mongodb://localhost/yelp_camp");
+// mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://<nishtha>:<Nishtha1234#>@ds025399.mlab.com:25399/yelpcamp");
 
 
 
