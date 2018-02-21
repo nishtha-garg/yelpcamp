@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Comment Edit</div>
+    <form class="ui form" action="/campgrounds/<%=id%>/comments/<%=comment._id%>?_method=PUT" method="POST">
+        
+        <div class="field">
+            <label>Comment Text</label>
+            <input type="text" name="comment[text]" value="<%= comment.text %>">
+        </div>
+        
+       
+    
+        <input class="ui violet basic button " type="Submit">
+        
+        
+    </form>
+
+<a href="/campgrounds">Go Back</a>
+</div>
+
+
+<% include ../partials/footer %>
+
+
+

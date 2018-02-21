@@ -1,0 +1,47 @@
+<% include partials/header %>
+
+<% if(currentUser && currentUser.isAdmin){ %>
+    <h4> Welcome Admin!! </h4>
+    <% } %>
+<div class="container">
+       <header class="jumbotron">
+       <div class="container">
+         <h1> Welcome to CampGrounds Page</h1>
+         <p>Here is the list of various campgrounds</p>
+         <p>
+             <a class="btn btn-primary btn-lg" href="/campgrounds/new" role="button">Add a new CampGround</a>
+         </p>
+         <p>
+             <form action="/campgrounds" method="GET" class="form-inline">
+                 <div class="form-group">
+                     <input type="text" name="search" placeholder="looking for Campground" class="form-control">
+                     <input type="submit" value="Search" class="btn-btn-primary disabled">
+                 </div>
+             </form>
+         </p>
+       </div>
+       </header>
+       
+        <div class="row text-center" flex-wrap:"wrap">
+           <div class="col-md-12">
+               <% if(noMatch!==null){ %>
+                   <h3><%=noMatch %></h3>
+                   <% } %>
+           </div>
+           <% campgrounds.forEach(function(campground){ %>
+              <div class="col-md-4 col-md-12">
+              <div class="thumbnail">
+                  <div class="caption">
+                      <h4><strong> <%= campground.name %> </strong></h4>
+                    </div>
+                      <img class="img-responsive" src="<%= campground.image %>">
+                      <p><a class="btn btn-primary btn-block" href="/campgrounds/<%=campground._id%>" role="button">More Information</a></p>
+        
+               </div>
+            </div> 
+             <% }) %> 
+        </div>
+        <a href="/">Go Back</a>
+</div>
+
+<% include partials/footer %>

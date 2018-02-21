@@ -1,0 +1,26 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+    <h3>Forgot password</h3>
+    <div class="row"></div>
+    <div class="col-md-12"</div>
+        
+    <form class="ui form" action="/forgot" method="POST">
+        
+        <div class="field">
+            <label for="email">Email</label>
+            <input name= "email" type="email">
+        </div>
+        
+      <div class="form-group">
+          <input type="submit" class="btn btn-primary" value="Reset Password">
+      </div>
+    </form>
+
+ <a input class="ui violet basic button " href="/campgrounds">Go Back</a>
+</div>
+
+
+
+<% include partials/footer %>
+
